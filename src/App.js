@@ -1,17 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Book from "./components/Book";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>Learn React</span>
-      </header>
-    </div>
+    <>
+      <Book name="사피엔스" totalPage="600" />
+      <Book name="공간으로 만든 공간" totalPage="340" />
+      <Book name="전생슬 19권" totalPage="468" />
+    </>
   );
 }
 
