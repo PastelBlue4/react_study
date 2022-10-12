@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 function Clock() {
+  const Title = styled.h1`
+    font-weight: 500;
+    margin-left: 15px;
+  `;
+  const Time = styled.h2`
+    font-size: 20px;
+    margin-left: 15px;
+  `;
+
   const [time, setTime] = useState();
 
   useEffect(() => {
@@ -11,8 +21,8 @@ function Clock() {
   }, []);
   return (
     <>
-      <h1>react clock</h1>
-      <h2>현재 시간: {time}</h2>
+      <Title>React clock</Title>
+      <Time>현재 시간: {time}</Time>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import Clock from "../components/Clock";
+import CommentList from "../components/CommentList";
 import Library from "../components/Library";
 
 function WeekOne() {
@@ -6,6 +7,7 @@ function WeekOne() {
     <>
       <Library />
       <Clock />
+      <CommentList />
     </>
   );
 }
