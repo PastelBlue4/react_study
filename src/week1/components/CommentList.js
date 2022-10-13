@@ -3,10 +3,10 @@ import Comment from "./Comment";
 const comments = [
   { name: "user 1", comments: "hello" },
   { name: "user 2", comments: "how are" },
-  { name: "user 2", comments: "you!" },
+  { name: "user 3", comments: "you!" },
 ];
 
-function CommentList(props) {
+function CommentList() {
   return (
     <div>
       {comments.map((comments) => {

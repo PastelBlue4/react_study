@@ -10,6 +10,8 @@ function Comment(props) {
     margin-left: 10px;
     font-size: 22px;
   `;
+
+  console.log(props);
   return (
     <>
       <div>
