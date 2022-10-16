@@ -37,6 +37,7 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
+  background-color: #aac4ff;
 }
 menu, ol, ul {
   list-style: none;

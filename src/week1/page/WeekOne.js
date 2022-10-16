@@ -6,10 +6,11 @@ import Library from "../components/Library";
 function WeekOne() {
   const WeekOneContainer = styled.div`
     display: flex;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
     border: solid red 1px;
   `;
+
   return (
     <>
       <WeekOneContainer>

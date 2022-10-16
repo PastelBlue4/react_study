@@ -7,8 +7,7 @@ import WeekThree from "./week3/page/WeekThree";
 const MainContainer = styled.div`
   width: 100%;
   height: 200vh;
-  margin: 0%;
-  background-color: #aac4ff;
+  margin-top: 20px;
 `;
 
 const ButtonContainer = styled.div`
@@ -25,8 +24,11 @@ const LinkButton = styled(Link)`
   margin-left: 10px;
   font-size: 20px;
   color: #eef1ff;
-  background-color: #d2daff;
+  border: solid 2px #d2daff;
+  border-radius: 8px;
   padding: 10px 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 function App() {

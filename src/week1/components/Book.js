@@ -3,8 +3,10 @@ import styled from "styled-components";
 function Book(props) {
   const Container = styled.div`
     display: flex;
-    border: 1px black solid;
     flex-direction: column;
+    border: 1px black solid;
+    border-radius: 15px;
+    margin: 5px;
   `;
   const Title = styled.div`
     font-size: 24px;
