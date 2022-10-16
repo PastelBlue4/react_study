@@ -5,8 +5,9 @@ import WeekTwo from "./week2/page/WeekTwo";
 import WeekThree from "./week3/page/WeekThree";
 
 const MainContainer = styled.div`
-  width: 100vh;
-  height: 100vh;
+  width: 100%;
+  height: 200vh;
+  margin: 0%;
   background-color: #aac4ff;
 `;
 
@@ -16,6 +17,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid blue;
 `;
 
 const LinkButton = styled(Link)`
