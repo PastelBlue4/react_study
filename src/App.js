@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme, defaultTheme } from "./theme";
+
 import WeekOne from "./week1/page/WeekOne";
 import WeekTwo from "./week2/page/WeekTwo";
 import WeekThree from "./week3/page/WeekThree";
@@ -7,7 +10,7 @@ import WeekThree from "./week3/page/WeekThree";
 const MainContainer = styled.div`
   width: 100%;
   height: 200vh;
-  margin-top: 20px;
+  background-color: ${(props) => props.theme.bgColor};
 `;
 
 const ButtonContainer = styled.div`
@@ -32,20 +35,25 @@ const LinkButton = styled(Link)`
 `;
 
 function App() {
-  return (
-    <MainContainer>
-      <ButtonContainer>
-        <LinkButton to="/">Week 1</LinkButton>
-        <LinkButton to="weektwo">Week 2</LinkButton>
-        <LinkButton to="weekthree">Week 3</LinkButton>
-      </ButtonContainer>
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-      <Routes>
-        <Route path="/" element={<WeekOne />} />
-        <Route path="weektwo" element={<WeekTwo />} />
-        <Route path="weekthree" element={<WeekThree />} />
-      </Routes>
-    </MainContainer>
+  return (
+    <ThemeProvider theme={isDarkMode ? darkTheme : defaultTheme}>
+      <MainContainer>
+        <ButtonContainer>
+          <LinkButton to="/">Week 1</LinkButton>
+          <LinkButton to="weektwo">Week 2</LinkButton>
+          <LinkButton to="weekthree">Week 3</LinkButton>
+          <button onClick={() => setIsDarkMode((prev) => !prev)}>toggle</button>
+        </ButtonContainer>
+
+        <Routes>
+          <Route path="/" element={<WeekOne />} />
+          <Route path="weektwo" element={<WeekTwo />} />
+          <Route path="weekthree" element={<WeekThree />} />
+        </Routes>
+      </MainContainer>
+    </ThemeProvider>
   );
 }
 

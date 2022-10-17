@@ -15,8 +15,7 @@ function Comment(props) {
   return (
     <>
       <div>
-        <UserName>{props.name}</UserName>
-        <Message>{props.comments}</Message>
+        <UserName>{props.name}</UserName> : <Message>{props.comments}</Message>
       </div>
     </>
   );
