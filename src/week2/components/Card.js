@@ -7,6 +7,7 @@ function Card(props) {
     height: 200px;
     margin: 10px;
     background-color: ${(props) => props.theme.pointColor1};
+    border-radius: 10px;
   `;
   const ImgContainer = styled.div`
     width: auto;

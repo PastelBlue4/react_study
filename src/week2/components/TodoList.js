@@ -25,7 +25,24 @@ const ToDoListContainer = styled.div`
   grid-template-rows: 1fr 1fr;
   row-gap: 5px;
   column-gap: 3px;
-  border: red 1px solid;
+  border-radius: 12px;
+  background-color: ${(props) => props.theme.pointColor2};
+`;
+
+const FormContainer = styled.form`
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin-top: 10px;
+`;
+
+const Input = styled.input`
+  width: 400px;
+  height: 30px;
+`;
+
+const InputButton = styled.button`
+  color: ${(props) => props.theme.pointColor1};
   background-color: ${(props) => props.theme.pointColor2};
 `;
 
@@ -52,15 +69,15 @@ function ToDoList() {
         </ToDoListContainer>
       </OutPutContainer>
 
-      <form onSubmit={onSubmit}>
-        <input
+      <FormContainer onSubmit={onSubmit}>
+        <Input
           onChange={onChange}
           value={toDo}
           type="text"
           placeholder="Write your to do..."
         />
-        <button>Add To Do</button>
-      </form>
+        <InputButton>Add To Do</InputButton>
+      </FormContainer>
     </>
   );
 }
