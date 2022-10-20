@@ -3,12 +3,13 @@ import IDK from "/Users/romuru/Desktop/project/react-study/src/week2/image/IDK.p
 
 function Card(props) {
   const CardContainer = styled.div`
-    width: 22rem;
+    width: 20rem;
     height: 200px;
     margin: 10px;
     background-color: ${(props) => props.theme.pointColor1};
     border-radius: 10px;
   `;
+
   const ImgContainer = styled.div`
     width: auto;
     height: auto;
@@ -28,6 +29,7 @@ function Card(props) {
     width: auto;
     height: auto;
   `;
+
   const Text = styled.span`
     font-size: 30px;
     color: ${(props) => props.theme.textColor};
