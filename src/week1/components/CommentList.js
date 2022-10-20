@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Comment from "./Comment";
 
 const comments = [
@@ -8,7 +7,6 @@ const comments = [
 ];
 
 function CommentList() {
-  const List = styled.div``;
   return (
     <div>
       {comments.map((comments) => {

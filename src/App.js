@@ -19,7 +19,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
+  margin-bottom: 20px;
 `;
 
 const LinkButton = styled(Link)`
@@ -34,6 +34,14 @@ const LinkButton = styled(Link)`
   margin-bottom: 10px;
 `;
 
+const DarkModeButton = styled.button`
+  margin-left: 30px;
+  font-size: 20px;
+  color: ${(props) => props.theme.toggleModeTextColor};
+  border: ${(props) => props.theme.toggleModeTextColor}, 1px solid;
+  background-color: ${(props) => props.theme.bgColor};
+`;
+
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -44,7 +52,9 @@ function App() {
           <LinkButton to="/">Week 1</LinkButton>
           <LinkButton to="weektwo">Week 2</LinkButton>
           <LinkButton to="weekthree">Week 3</LinkButton>
-          <button onClick={() => setIsDarkMode((prev) => !prev)}>toggle</button>
+          <DarkModeButton onClick={() => setIsDarkMode((prev) => !prev)}>
+            toggle
+          </DarkModeButton>
         </ButtonContainer>
 
         <Routes>

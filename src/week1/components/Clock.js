@@ -9,20 +9,21 @@ function Clock() {
   `;
 
   const ClockGroup = styled.div`
-    border: solid 1px black;
-    width: 30%;
+    width: 100%;
     height: 30%;
+    display: flex;
+    justify-content: center;
   `;
 
+  const GropContainer = styled.div``;
+
   const Title = styled.h1`
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 20px;
-    margin-left: 15px;
-    font-size: 30px;
+    font-size: 35px;
   `;
   const Time = styled.h2`
     font-size: 20px;
-    margin-left: 15px;
     margin-top: 10px;
   `;
 
@@ -38,8 +39,10 @@ function Clock() {
     <>
       <ClockContainer>
         <ClockGroup>
-          <Title>React clock</Title>
-          <Time>현재 시간: {time}</Time>
+          <GropContainer>
+            <Title>React clock</Title>
+            <Time>현재 시간: {time}</Time>
+          </GropContainer>
         </ClockGroup>
       </ClockContainer>
     </>

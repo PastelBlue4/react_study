@@ -8,7 +8,6 @@ function WeekOne() {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: solid red 1px;
     color: ${(props) => props.theme.textColor};
   `;
 

@@ -1,7 +1,9 @@
+import ToDoList from "../components/TodoList";
+
 function WeekTwo() {
   return (
     <>
-      <div>Week Two Page :)</div>
+      <ToDoList />
     </>
   );
 }
