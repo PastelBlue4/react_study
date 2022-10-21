@@ -37,7 +37,7 @@ const FormContainer = styled.form`
 `;
 
 const Input = styled.input`
-  width: 400px;
+  width: 450px;
   height: 30px;
 `;
 
