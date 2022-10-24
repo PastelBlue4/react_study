@@ -46,10 +46,20 @@ const InputButton = styled.button`
   background-color: ${(props) => props.theme.pointColor2};
 `;
 
+const MaxComment = styled.span`
+  font-size: 30px;
+  color: ${(props) => props.theme.textColor};
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+  margin-top: 20px;
+`;
+
 function ToDoList() {
   const [toDo, setToDo] = useState("");
   const [toDos, setToDos] = useState([]);
-  let max = 0;
+
   const onChange = (event) => setToDo(event.target.value);
   const onSubmit = (event) => {
     event.preventDefault();
@@ -58,8 +68,6 @@ function ToDoList() {
     }
     setToDos((currentArray) => [...currentArray, toDo]);
     setToDo("");
-
-    max = max + 1;
   };
   return (
     <>
@@ -79,8 +87,11 @@ function ToDoList() {
           type="text"
           placeholder="할 일을 추가해보세요."
         />
-        <InputButton disabled={max > 6 ? true : false}>Add To Do</InputButton>
+        <InputButton disabled={toDos.length > 5 ? true : false}>
+          Add To Do
+        </InputButton>
       </FormContainer>
+      {toDos.length > 5 ? <MaxComment>리스트가 꽉 찼습니다!</MaxComment> : null}
     </>
   );
 }
