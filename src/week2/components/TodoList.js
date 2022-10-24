@@ -49,6 +49,7 @@ const InputButton = styled.button`
 function ToDoList() {
   const [toDo, setToDo] = useState("");
   const [toDos, setToDos] = useState([]);
+  let max = 0;
   const onChange = (event) => setToDo(event.target.value);
   const onSubmit = (event) => {
     event.preventDefault();
@@ -57,10 +58,12 @@ function ToDoList() {
     }
     setToDos((currentArray) => [...currentArray, toDo]);
     setToDo("");
+
+    max = max + 1;
   };
   return (
     <>
-      <Title>카드형 To Do List</Title>
+      <Title>To Do List</Title>
       <OutPutContainer>
         <ToDoListContainer>
           {toDos.map((item, index) => (
@@ -74,9 +77,9 @@ function ToDoList() {
           onChange={onChange}
           value={toDo}
           type="text"
-          placeholder="Write your to do..."
+          placeholder="할 일을 추가해보세요."
         />
-        <InputButton>Add To Do</InputButton>
+        <InputButton disabled={max > 6 ? true : false}>Add To Do</InputButton>
       </FormContainer>
     </>
   );
