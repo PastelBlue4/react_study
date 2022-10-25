@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Clock from "../components/Clock";
 import CommentList from "../components/CommentList";

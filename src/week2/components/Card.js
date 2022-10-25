@@ -32,6 +32,7 @@ function Card(props) {
 
   const Text = styled.span`
     font-size: 30px;
+    font-weight: 400;
     color: ${(props) => props.theme.textColor};
   `;
 
