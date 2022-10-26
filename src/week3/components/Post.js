@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const PostContainer = styled.div`
@@ -10,6 +11,7 @@ const PostContainer = styled.div`
   border-radius: 15px;
   padding: 20px;
   background-color: white;
+  cursor: pointer;
 `;
 
 const StyledTitle = styled.h1`
@@ -27,11 +29,15 @@ const StyledContents = styled.span`
 `;
 
 function Post(props) {
-  console.log(props);
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    navigate("/writePage");
+  };
 
   return (
     <>
-      <PostContainer>
+      <PostContainer onClick={onClick}>
         <StyledTitle>{props.item.title}</StyledTitle>
         <StyledDate>{props.item.date}</StyledDate>
         <StyledContents>{props.item.contents} </StyledContents>
