@@ -17,6 +17,9 @@ const LoginTitle = styled.h1`
 
 const StyledForm = styled.form`
   margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledInput = styled.input`
@@ -24,23 +27,34 @@ const StyledInput = styled.input`
   height: 30px;
   font-size: 20px;
   margin-right: 20px;
+  border-radius: 13px;
+  border: 1px beige solid;
 `;
 
 const StyledButton = styled.button`
   width: 100px;
-  height: 30px;
+  height: 34px;
   background-color: aliceblue;
+  border-radius: 13px;
+  cursor: pointer;
+  &:hover {
+    background-color: #81c6e8;
+  }
 `;
 
 const ErrorMessage = styled.span`
   font-size: 22px;
   color: #ff577f;
-  margin-top: 10px;
+  margin-top: 15px;
 `;
 
 function BlogPage() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [message, setMessage] = useState(false);
+
   const onSubmit = (e) => {
-    if (userName.length < 2) {
+    if (userName.length < 1) {
       setMessage(true);
       e.preventDefault();
     } else {
@@ -49,9 +63,10 @@ function BlogPage() {
     }
   };
 
-  const [isLogin, setIsLogin] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [message, setMessage] = useState(false);
+  const onChange = (e) => {
+    setUserName(e.target.value);
+    setMessage(false);
+  };
 
   return (
     <>
@@ -64,7 +79,7 @@ function BlogPage() {
             <StyledInput
               placeholder="write your name  :)"
               value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={onChange}
             />
             <StyledButton>Log In</StyledButton>
           </StyledForm>{" "}
