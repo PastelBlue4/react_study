@@ -86,6 +86,12 @@ function PostList({ userName }) {
   const [isWrite, setIsWrite] = useState(false);
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
+  const dateObject = new Date();
+  console.log(dateObject);
+  const year = dateObject.getFullYear();
+  const month = dateObject.getUTCMonth() + 1;
+  console.log(month);
+  const day = dateObject.getDate();
 
   const [postItems, setpostItems] = useState([
     {
@@ -121,9 +127,10 @@ function PostList({ userName }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     let object = {
       title: title,
-      date: "2020년 10월 26일",
+      date: `${year}년 ${month}월 ${day}일`,
       contents: contents,
     };
     setpostItems((oldArray) => [object, ...oldArray]);
