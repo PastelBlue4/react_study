@@ -161,7 +161,7 @@ function PostList({ userName }) {
         </>
       ) : (
         <Container>
-          <Title>{userName}의 짜장 멋진 블로그</Title>
+          <Title>{userName}의 간장게장같은 블로그</Title>
           <ButtonContainer>
             <WriteButton onClick={onClick}>글작성 하기 </WriteButton>
           </ButtonContainer>
