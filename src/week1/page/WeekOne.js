@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Clock from "../components/Clock";
 import CommentList from "../components/CommentList";
@@ -10,6 +9,7 @@ function WeekOne() {
     justify-content: center;
     flex-direction: column;
     color: ${(props) => props.theme.textColor};
+    background-color: ${(props) => console.log(props)};
   `;
 
   return (

@@ -11,7 +11,6 @@ function Comment(props) {
     font-size: 22px;
   `;
 
-  console.log(props);
   return (
     <>
       <div>
