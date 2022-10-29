@@ -9,7 +9,6 @@ function WeekOne() {
     justify-content: center;
     flex-direction: column;
     color: ${(props) => props.theme.textColor};
-    background-color: ${(props) => console.log(props)};
   `;
 
   return (
