@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 const WirteContainer = styled.div`
   display: flex;
@@ -41,7 +42,7 @@ const PostSubmutButton = styled.button`
   font-size: 16px;
 `;
 
-function WriteForm() {
+function WriteForm(props) {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   const dateObject = new Date();
@@ -57,8 +58,7 @@ function WriteForm() {
       date: `${year}년 ${month}월 ${day}일`,
       contents: contents,
     };
-    setpostItems((oldArray) => [object, ...oldArray]);
-    setIsWrite(false);
+    props.onAddDataHandler(object);
   };
 
   return (

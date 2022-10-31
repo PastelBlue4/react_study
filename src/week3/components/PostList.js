@@ -72,6 +72,11 @@ function PostList({ userName }) {
     },
   ]);
 
+  const AddDataHandler = (data) => {
+    setpostItems((oldArray) => [data, ...oldArray]);
+    setIsWrite(false);
+  };
+
   const onClick = () => {
     setIsWrite(true);
   };
@@ -80,7 +85,7 @@ function PostList({ userName }) {
     <>
       {isWrite ? (
         <>
-          <WriteForm />
+          <WriteForm onAddDataHandler={AddDataHandler} />
         </>
       ) : (
         <Container>
